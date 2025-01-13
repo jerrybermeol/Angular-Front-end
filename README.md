@@ -25,8 +25,3 @@ export const environment = {
   apiUrl: 'http://localhost:5000/api'  // URL del backend
 };
 
-git clone https://github.com/tu-usuario/telco-frontend.git
-cd telco-frontend
-
-npm install
-
