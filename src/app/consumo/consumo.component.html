@@ -1,0 +1,33 @@
+<div *ngIf="consumoData?.length">
+  <!-- <h2>Bienvenido, {{ consumoData[0].nombre }}</h2> -->
+  <h2>Panel de visualizacion de datos de los Usuarios</h2>
+
+  <!-- Campo de búsqueda -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar..." class="search-input" />
+
+  <!-- Tabla de Consumo -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ícono</th>
+        <th>Usuario</th>
+        <th>Saldo</th>
+        <th>consumo Datos</th>
+        <th>Consumo Minutos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of consumoData | filter: searchTerm">
+        <td><i class="material-icons">data_usage</i></td>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.saldo }}</td>
+        <td>{{ item.consumoDatos }}</td>
+        <td>{{ item.consumoMinutos }}</td>      
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!consumoData?.length">
+  <p>Cargando datos...</p>
+</div>
